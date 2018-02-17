@@ -38,3 +38,23 @@ Route::patch('backend/productPricings/{productPricings}', ['as'=> 'backend.produ
 Route::delete('backend/productPricings/{productPricings}', ['as'=> 'backend.productPricings.destroy', 'uses' => 'Backend\ProductPricingController@destroy']);
 Route::get('backend/productPricings/{productPricings}', ['as'=> 'backend.productPricings.show', 'uses' => 'Backend\ProductPricingController@show']);
 Route::get('backend/productPricings/{productPricings}/edit', ['as'=> 'backend.productPricings.edit', 'uses' => 'Backend\ProductPricingController@edit']);
+
+
+Route::get('backend/productAttributes', ['as'=> 'backend.productAttributes.index', 'uses' => 'Backend\ProductAttributeController@index']);
+Route::post('backend/productAttributes', ['as'=> 'backend.productAttributes.store', 'uses' => 'Backend\ProductAttributeController@store']);
+Route::get('backend/productAttributes/create', ['as'=> 'backend.productAttributes.create', 'uses' => 'Backend\ProductAttributeController@create']);
+Route::put('backend/productAttributes/{productAttributes}', ['as'=> 'backend.productAttributes.update', 'uses' => 'Backend\ProductAttributeController@update']);
+Route::patch('backend/productAttributes/{productAttributes}', ['as'=> 'backend.productAttributes.update', 'uses' => 'Backend\ProductAttributeController@update']);
+Route::delete('backend/productAttributes/{productAttributes}', ['as'=> 'backend.productAttributes.destroy', 'uses' => 'Backend\ProductAttributeController@destroy']);
+Route::get('backend/productAttributes/{productAttributes}', ['as'=> 'backend.productAttributes.show', 'uses' => 'Backend\ProductAttributeController@show']);
+Route::get('backend/productAttributes/{productAttributes}/edit', ['as'=> 'backend.productAttributes.edit', 'uses' => 'Backend\ProductAttributeController@edit']);
+
+
+Route::get('backend/productInventories', ['as'=> 'backend.productInventories.index', 'uses' => 'Backend\ProductInventoryController@index']);
+Route::post('backend/productInventories', ['as'=> 'backend.productInventories.store', 'uses' => 'Backend\ProductInventoryController@store']);
+Route::get('backend/productInventories/create', ['as'=> 'backend.productInventories.create', 'uses' => 'Backend\ProductInventoryController@create']);
+Route::put('backend/productInventories/{productInventories}', ['as'=> 'backend.productInventories.update', 'uses' => 'Backend\ProductInventoryController@update']);
+Route::patch('backend/productInventories/{productInventories}', ['as'=> 'backend.productInventories.update', 'uses' => 'Backend\ProductInventoryController@update']);
+Route::delete('backend/productInventories/{productInventories}', ['as'=> 'backend.productInventories.destroy', 'uses' => 'Backend\ProductInventoryController@destroy']);
+Route::get('backend/productInventories/{productInventories}', ['as'=> 'backend.productInventories.show', 'uses' => 'Backend\ProductInventoryController@show']);
+Route::get('backend/productInventories/{productInventories}/edit', ['as'=> 'backend.productInventories.edit', 'uses' => 'Backend\ProductInventoryController@edit']);

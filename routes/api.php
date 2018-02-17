@@ -31,3 +31,17 @@ Route::get('backend/product_pricings/{product_pricings}', 'Backend\ProductPricin
 Route::put('backend/product_pricings/{product_pricings}', 'Backend\ProductPricingAPIController@update');
 Route::patch('backend/product_pricings/{product_pricings}', 'Backend\ProductPricingAPIController@update');
 Route::delete('backend/product_pricings{product_pricings}', 'Backend\ProductPricingAPIController@destroy');
+
+Route::get('backend/product_attributes', 'Backend\ProductAttributeAPIController@index');
+Route::post('backend/product_attributes', 'Backend\ProductAttributeAPIController@store');
+Route::get('backend/product_attributes/{product_attributes}', 'Backend\ProductAttributeAPIController@show');
+Route::put('backend/product_attributes/{product_attributes}', 'Backend\ProductAttributeAPIController@update');
+Route::patch('backend/product_attributes/{product_attributes}', 'Backend\ProductAttributeAPIController@update');
+Route::delete('backend/product_attributes{product_attributes}', 'Backend\ProductAttributeAPIController@destroy');
+
+Route::get('backend/product_inventories', 'Backend\ProductInventoryAPIController@index');
+Route::post('backend/product_inventories', 'Backend\ProductInventoryAPIController@store');
+Route::get('backend/product_inventories/{product_inventories}', 'Backend\ProductInventoryAPIController@show');
+Route::put('backend/product_inventories/{product_inventories}', 'Backend\ProductInventoryAPIController@update');
+Route::patch('backend/product_inventories/{product_inventories}', 'Backend\ProductInventoryAPIController@update');
+Route::delete('backend/product_inventories{product_inventories}', 'Backend\ProductInventoryAPIController@destroy');
