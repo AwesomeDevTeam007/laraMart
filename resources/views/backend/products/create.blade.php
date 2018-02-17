@@ -34,7 +34,7 @@
                         
                         </div>
                         <div role="tabpanel" class="tab-pane" id="profile">
-                           pricing
+                           @include('backend.product_pricings.fields')
                         </div>
                         <div role="tabpanel" class="tab-pane" id="messages">
                          inventory
