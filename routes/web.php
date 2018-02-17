@@ -28,3 +28,13 @@ Route::patch('backend/products/{products}', ['as'=> 'backend.products.update', '
 Route::delete('backend/products/{products}', ['as'=> 'backend.products.destroy', 'uses' => 'Backend\ProductController@destroy']);
 Route::get('backend/products/{products}', ['as'=> 'backend.products.show', 'uses' => 'Backend\ProductController@show']);
 Route::get('backend/products/{products}/edit', ['as'=> 'backend.products.edit', 'uses' => 'Backend\ProductController@edit']);
+
+
+Route::get('backend/productPricings', ['as'=> 'backend.productPricings.index', 'uses' => 'Backend\ProductPricingController@index']);
+Route::post('backend/productPricings', ['as'=> 'backend.productPricings.store', 'uses' => 'Backend\ProductPricingController@store']);
+Route::get('backend/productPricings/create', ['as'=> 'backend.productPricings.create', 'uses' => 'Backend\ProductPricingController@create']);
+Route::put('backend/productPricings/{productPricings}', ['as'=> 'backend.productPricings.update', 'uses' => 'Backend\ProductPricingController@update']);
+Route::patch('backend/productPricings/{productPricings}', ['as'=> 'backend.productPricings.update', 'uses' => 'Backend\ProductPricingController@update']);
+Route::delete('backend/productPricings/{productPricings}', ['as'=> 'backend.productPricings.destroy', 'uses' => 'Backend\ProductPricingController@destroy']);
+Route::get('backend/productPricings/{productPricings}', ['as'=> 'backend.productPricings.show', 'uses' => 'Backend\ProductPricingController@show']);
+Route::get('backend/productPricings/{productPricings}/edit', ['as'=> 'backend.productPricings.edit', 'uses' => 'Backend\ProductPricingController@edit']);

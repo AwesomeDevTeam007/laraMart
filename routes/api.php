@@ -24,3 +24,10 @@ Route::get('backend/products/{products}', 'Backend\ProductAPIController@show');
 Route::put('backend/products/{products}', 'Backend\ProductAPIController@update');
 Route::patch('backend/products/{products}', 'Backend\ProductAPIController@update');
 Route::delete('backend/products{products}', 'Backend\ProductAPIController@destroy');
+
+Route::get('backend/product_pricings', 'Backend\ProductPricingAPIController@index');
+Route::post('backend/product_pricings', 'Backend\ProductPricingAPIController@store');
+Route::get('backend/product_pricings/{product_pricings}', 'Backend\ProductPricingAPIController@show');
+Route::put('backend/product_pricings/{product_pricings}', 'Backend\ProductPricingAPIController@update');
+Route::patch('backend/product_pricings/{product_pricings}', 'Backend\ProductPricingAPIController@update');
+Route::delete('backend/product_pricings{product_pricings}', 'Backend\ProductPricingAPIController@destroy');
