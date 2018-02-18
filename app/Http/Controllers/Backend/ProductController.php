@@ -101,8 +101,6 @@ class ProductController extends AppBaseController
 
         $branches = Branch::all();
 
-
-
         return view('backend.products.edit')
         ->with(['product'=> $product,
                 'branches'=>$branches        
@@ -127,7 +125,10 @@ class ProductController extends AppBaseController
             return redirect(route('backend.products.index'));
         }
 
-        $product = $this->productRepository->update($request->all(), $id);
+        $formData = $request->all();
+       // dd($formData);
+
+        $product = $this->productRepository->update($formData, $id);
 
         Flash::success('Product updated successfully.');
 

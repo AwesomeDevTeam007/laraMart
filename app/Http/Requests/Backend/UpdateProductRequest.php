@@ -25,6 +25,6 @@ class UpdateProductRequest extends FormRequest
      */
     public function rules()
     {
-        return Product::$rules;
+        return [];
     }
 }

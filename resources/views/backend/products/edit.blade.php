@@ -44,6 +44,10 @@
 
                         @endforeach
 
+                        <!-- Submit Field -->
+                        <div class="form-group col-sm-12">
+                            {!! Form::submit('Save', ['class' => 'btn btn-primary','name'=>'submit_inventory']) !!}
+                        </div>
 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="settings">
