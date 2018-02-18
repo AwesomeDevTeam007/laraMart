@@ -10,8 +10,10 @@ use App\Repositories\Backend\ProductRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Backend\Product;
 use App\Models\Backend\Branch;
 use App\Models\Backend\ProductInventory;
+use App\Models\Backend\ProductPricing;
 
 class ProductController extends AppBaseController
 {
@@ -91,7 +93,10 @@ class ProductController extends AppBaseController
      */
     public function edit($id)
     {
-        $product = $this->productRepository->findWithoutFail($id);
+       // $product = $this->productRepository->findWithoutFail($id);
+       $product = Product::leftJoin("product_pricings as pp","pp.product_id","=","products.id")
+                 ->where("products.id",$id)
+                 ->first();
 
         if (empty($product)) {
             Flash::error('Product not found');
@@ -134,6 +139,13 @@ class ProductController extends AppBaseController
         $product = $this->productRepository->update($formData, $id);
 
         //update pricing
+
+        $pp = ProductPricing::firstOrCreate([
+            "product_id"=>$product->id
+        ]);
+        $pp->selling_price = $formData['selling_price'];
+        $pp->buying_price  = $formData['buying_price'];
+        $pp->save();
 
         //update inventory
         $i= 0;

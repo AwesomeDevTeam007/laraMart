@@ -7,13 +7,13 @@
 <!-- Buying Price Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('buying_price', 'Buying Price:') !!}
-    {!! Form::number('buying_price', null, ['class' => 'form-control']) !!}
+    {!! Form::number('buying_price', $product->buying_price, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Selling Price Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('selling_price', 'Selling Price:') !!}
-    {!! Form::number('selling_price', null, ['class' => 'form-control']) !!}
+    {!! Form::number('selling_price', $product->selling_price, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->
