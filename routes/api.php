@@ -45,3 +45,10 @@ Route::get('backend/product_inventories/{product_inventories}', 'Backend\Product
 Route::put('backend/product_inventories/{product_inventories}', 'Backend\ProductInventoryAPIController@update');
 Route::patch('backend/product_inventories/{product_inventories}', 'Backend\ProductInventoryAPIController@update');
 Route::delete('backend/product_inventories{product_inventories}', 'Backend\ProductInventoryAPIController@destroy');
+
+Route::get('backend/branches', 'Backend\BranchAPIController@index');
+Route::post('backend/branches', 'Backend\BranchAPIController@store');
+Route::get('backend/branches/{branches}', 'Backend\BranchAPIController@show');
+Route::put('backend/branches/{branches}', 'Backend\BranchAPIController@update');
+Route::patch('backend/branches/{branches}', 'Backend\BranchAPIController@update');
+Route::delete('backend/branches{branches}', 'Backend\BranchAPIController@destroy');

@@ -10,6 +10,7 @@ use App\Repositories\Backend\ProductRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Backend\Branch;
 
 class ProductController extends AppBaseController
 {
@@ -97,7 +98,15 @@ class ProductController extends AppBaseController
             return redirect(route('backend.products.index'));
         }
 
-        return view('backend.products.edit')->with('product', $product);
+
+        $branches = Branch::all();
+
+
+
+        return view('backend.products.edit')
+        ->with(['product'=> $product,
+                'branches'=>$branches        
+        ]);
     }
 
     /**

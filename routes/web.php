@@ -58,3 +58,13 @@ Route::patch('backend/productInventories/{productInventories}', ['as'=> 'backend
 Route::delete('backend/productInventories/{productInventories}', ['as'=> 'backend.productInventories.destroy', 'uses' => 'Backend\ProductInventoryController@destroy']);
 Route::get('backend/productInventories/{productInventories}', ['as'=> 'backend.productInventories.show', 'uses' => 'Backend\ProductInventoryController@show']);
 Route::get('backend/productInventories/{productInventories}/edit', ['as'=> 'backend.productInventories.edit', 'uses' => 'Backend\ProductInventoryController@edit']);
+
+
+Route::get('backend/branches', ['as'=> 'backend.branches.index', 'uses' => 'Backend\BranchController@index']);
+Route::post('backend/branches', ['as'=> 'backend.branches.store', 'uses' => 'Backend\BranchController@store']);
+Route::get('backend/branches/create', ['as'=> 'backend.branches.create', 'uses' => 'Backend\BranchController@create']);
+Route::put('backend/branches/{branches}', ['as'=> 'backend.branches.update', 'uses' => 'Backend\BranchController@update']);
+Route::patch('backend/branches/{branches}', ['as'=> 'backend.branches.update', 'uses' => 'Backend\BranchController@update']);
+Route::delete('backend/branches/{branches}', ['as'=> 'backend.branches.destroy', 'uses' => 'Backend\BranchController@destroy']);
+Route::get('backend/branches/{branches}', ['as'=> 'backend.branches.show', 'uses' => 'Backend\BranchController@show']);
+Route::get('backend/branches/{branches}/edit', ['as'=> 'backend.branches.edit', 'uses' => 'Backend\BranchController@edit']);
