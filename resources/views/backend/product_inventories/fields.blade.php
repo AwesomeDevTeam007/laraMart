@@ -14,13 +14,13 @@
 <!-- Instock Qty Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('instock_qty', 'Instock Qty:') !!}
-    {!! Form::number('instock_qty[]', 0, ['class' => 'form-control']) !!}
+    {!! Form::number('instock_qty[]', $branch->instock_qty, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Notify Qty Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('notify_qty', 'Notify Qty:') !!}
-    {!! Form::number('notify_qty[]', 0, ['class' => 'form-control']) !!}
+    {!! Form::number('notify_qty[]', $branch->notify_qty, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group col-md-12">

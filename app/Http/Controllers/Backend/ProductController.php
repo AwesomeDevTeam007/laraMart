@@ -100,7 +100,9 @@ class ProductController extends AppBaseController
         }
 
 
-        $branches = Branch::all();
+        $branches = Branch::leftJoin("product_inventories as pi","pi.branch_id","=","branches.id")
+                   ->select("branches.*","pi.instock_qty","pi.notify_qty")
+                   ->get();
 
         return view('backend.products.edit')
         ->with(['product'=> $product,
