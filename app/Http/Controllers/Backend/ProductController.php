@@ -11,6 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 use App\Models\Backend\Branch;
+use App\Models\Backend\ProductInventory;
 
 class ProductController extends AppBaseController
 {
@@ -129,6 +130,27 @@ class ProductController extends AppBaseController
        // dd($formData);
 
         $product = $this->productRepository->update($formData, $id);
+
+        //update pricing
+
+        //update inventory
+        $i= 0;
+        foreach($formData['branch_id'] as $branch){
+
+            $pivt = ProductInventory::firstOrCreate([
+                "product_id"=>$product->id,
+                "branch_id"=>$branch
+            ]);
+            $pivt->instock_qty = $formData['instock_qty'][$i];
+            $pivt->notify_qty = $formData['notify_qty'][$i];
+            $pivt->save();
+
+        $i++;
+        }
+
+        // update attributes
+
+
 
         Flash::success('Product updated successfully.');
 
